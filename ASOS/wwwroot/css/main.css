@@ -1,0 +1,70 @@
+/*Arquivo de Css pessoal*/
+
+/*RESET */
+
+*{
+    margin: 0;
+	padding: 0;
+	border: 0;
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(25, 83, 31, 0.6);
+    height:auto;
+}
+
+
+.parallax-container {
+      height: 700px;
+    }
+
+.login{
+    margin-top: 20px;
+}
+
+.login .card{
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.login .card .tabs{
+    background: rgba(25, 83, 31, 0.603);
+}
+
+.login .indicator{
+position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: rgb(187, 228, 190);
+  will-change: left, right;
+}
+
+.login input{
+    font-size: 15px !important;
+    color: white;
+}
+
+.login .input-field input:focus + label {
+     color:rgb(168, 247, 168) !important;
+   }
+
+.login .input-field input:focus {
+   border-bottom: 1px solid green !important;
+   box-shadow: 0 1px 0 0 green !important
+}
+
+.login .input-field input.valid {
+     border-bottom: 1px solid blue !important;
+     box-shadow: 0 1px 0 0 blue !important;
+}
+
+.login label{
+    font-size: 18px;
+    color: white;
+}
+
+
+
+
+

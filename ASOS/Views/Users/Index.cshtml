@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "ASOS | Usuários";
+}
+
+<div class="container">
+    <h1>Usuários</h1>
+    <table class="striped responsive-table" style="margin-bottom:25rem; width:auto">
+        <thead>
+            <tr>
+                <th>Nome de Usuário</th>
+                <th>Email</th>
+                <th>Email Confirmado</th>
+                <th>Número Telefone</th>
+                <th>Número Confirmado</th>
+                <th>Data de Criação</th>
+                <th>Data de Atualização</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.UserName</td>
+                    <td>@user.Email</td>
+                    <td>@user.EmailConfirmed</td>
+                    <td>@user.PhoneNumber</td>
+                    <td>@user.PhoneNumberConfirmed</td>
+                    <td>@user.CreateAt</td>
+                    <td>@user.UpdateAt</td>
+                    <td style="white-space:nowrap; width:400px">
+                        <a class="waves-effect waves-light btn blue"><i class="material-icons left">cloud</i>Editar</a>
+                        <a class="waves-effect waves-light btn red"><i class="material-icons left">cloud</i>Deletar</a>
+                        <a class="waves-effect waves-light btn green"><i class="material-icons left">cloud</i>Detalhes</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,138 @@
+﻿
+@{
+    ViewBag.Title = "ASOS - HOME";
+}
+
+
+<div class="row login">
+    <div class=" col s12 m4 offset-m4">
+        <div class="card">
+            <div class="card-action green darken-3 white-text">
+                <h5 class="center">LOGIN</h5>
+            </div>
+            <div class="card-tabs">
+                <ul class="tabs tabs-fixed-width">
+                    <li class="tab"><a class="white-text active" id="tabEntrar" href="#entrar">Entrar</a></li>
+                    <li class="tab"><a class="white-text" id="tabNovoAcesso" href="#novoacesso">Novo Acesso</a></li>
+                </ul>
+            </div>
+            <div class="card-content">
+                <div id="entrar">
+                    <div class="row">
+                        <form id="formEntrar" class="col s12" action="" method="post">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input class="validate" type="email" name="email" id="email">
+                                    <label for="email">Email</label>
+                                    <span class="helper-text" data-error="wrong" data-success="right"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input class="validate" type="password" name="password" id="password">
+                                    <label for="password">Senha</label>
+                                    <span class="helper-text" data-error="wrong" data-success="right"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label>
+                                    <input type="checkbox" class="filled-in" />
+                                    <span>Mantenha-me conectado</span>
+                                </label>
+                            </div>
+                            <br>
+                            <div class="row center">
+                                <button class="btn green darken-3 waves-effect waves-light" type="submit" name="action">
+                                    ENTRAR
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="novoacesso">
+                    <div class="row">
+                        <form id="formNovoAcesso" class="col s12" action="" method="post">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input class="" required type="text" name="username" id="username">
+                                    <label for="username">Nome de Usuário</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input class="validate" required type="email" name="useremail" id="useremail">
+                                    <label for="email">Email</label>
+                                    <span class="helper-text" data-error="Email inválido" data-success="Email válido"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input class="" required type="password" name="userpassword1" id="userpassword1">
+                                    <label for="userpassword1">Informe a senha</label>
+                                    <span class="helper-text" data-error="As senhas não batem ou são inválidas!" data-success="As senhas são válidas!"></span>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input class="" required type="password" name="userpassword2" id="userpassword2">
+                                    <label for="userpassword2">Repita a senha</label>
+                                    <span class="helper-text" data-error="As senhas não batem ou são inválidas!" data-success="As senhas são válidas!"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label>
+                                    <input type="checkbox" class="filled-in" required />
+                                    <span>Aceito os <a>Termos de serviço e privacidade.</a></span>
+                                </label>
+                            </div>
+                            <br>
+                            <div class="row center">
+                                <button class="btn green darken-3 waves-effect waves-light" type="submit" name="action">
+                                    ACESSAR
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var instance = M.Tabs.init(document.querySelectorAll('.tabs'));
+
+        var pass1 = document.getElementById('userpassword1');
+        var pass2 = document.getElementById('userpassword2');
+
+        var tabEntrar = document.getElementById('tabEntrar');
+        var tabNovoAcesso = document.getElementById('tabNovoAcesso');
+        var formEntrar = document.getElementById('formEntrar');
+        var formNovoAcesso = document.getElementById('formNovoAcesso');
+
+        pass1.addEventListener('focusout', validatePassword);
+        pass2.addEventListener('focusout', validatePassword);
+
+        tabEntrar.addEventListener('focusout', function () { formEntrar.reset(); formNovoAcesso.reset(); })
+        tabNovoAcesso.addEventListener('focusout', function () { formEntrar.reset(); formNovoAcesso.reset(); })
+
+        function validatePassword() {
+
+            if((pass1.value != pass2.value)  || (pass1.value == "") || (pass2.value == ""))
+            {
+                pass1.classList.remove('validate');
+                pass2.classList.remove('validate');
+                pass1.classList.add('invalid');
+                pass2.classList.add('invalid');
+            }
+            else if(pass1.value == pass2.value)
+            {
+                pass1.classList.remove('invalid');
+                pass2.classList.remove('invalid');
+                pass1.classList.add('valid');
+                pass2.classList.add('valid');
+            }
+        }
+    })
+</script>

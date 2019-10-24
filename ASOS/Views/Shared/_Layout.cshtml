@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta name="author" content="Alexandre Rodrigues">
+    <meta name="reply-to" content="btt.ale@gmail.com">
+    <meta name="description" content="Sistema Web de manutenção">
+    <meta name="googlebot" content="noindex,nofollow">
+    <meta name="robots" content="noarchive">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/css/materialize.css" rel="stylesheet" />
+    <link href="~/css/main.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper green darken-2">
+                    <a href="/" class="brand-logo center hide-on-small-only"><img class="responsive-img" width="80" height="80" src="~/images/Logo.png" alt="Asos"></a>
+                    <a href="/" class="brand-logo center hide-on-med-and-up"><img class="responsive-img" width="65" height="65" src="~/images/Logo.png" alt="Asos"></a>
+                    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="right">
+                        <li><a href="#">SOBRE</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <ul id="slide-out" class="sidenav teal lighten-5">
+            <li>
+                <div class="user-view" style="height:200px">
+                    <div class="background">
+                        <img class="responsive-img" src="~/images/tools-498202_640.jpg">
+                    </div>
+                    <a href="#name"><span class="white-text right name">John Doe</span></a>
+                    <div></div>
+                    <a href="#email"><span class="white-text right email">jdandturk@gmail.com</span></a>
+                </div>
+            </li>
+            <li><a class="subheader center">Administrativo</a></li>
+            <li><a href="/users">Usuários</a></li>
+            <li><a href="#!">Equipamentos</a></li>
+            <li><a href="#!">Relatórios</a></li>
+            <li><div class="divider"></div></li>
+            <li><a href="#!">Ordens de Serviço</a></li>
+            <li><a href="#!">Requisições de Compra</a></li>
+            <li><a href="#!">Visitas em Emergência</a></li>
+            <li><a href="#!">Deslocamentos</a></li>
+            <li><div class="divider"></div></li>
+            <li><a href="#!">Sair</a></li>
+        </ul>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer class="green darken-4 page-footer">
+        <div class="container green darken-4">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">ASOS - SISTEMA WEB DE MANUTENÇÃO</h5>
+                    <p class="grey-text text-lighten-4"></p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Fale Conosco</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Site AllSafe Manutenções</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Email Institucional</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright green darken-3">
+            <div class="row container center ">
+                <span>Desenvolvido por AllSafe Manutenções</span>
+                <p><b>© @DateTime.Now.Year.ToString() - Todos os direitos reservados.</b></p>
+            </div>
+        </div>
+    </footer>
+    <script src="~/js/materialize.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var instances = M.Sidenav.init(document.querySelectorAll('.sidenav'));
+
+            
+        });
+
+            
+    </script>
+
+</body>
+</html>
